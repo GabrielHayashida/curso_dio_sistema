@@ -6,12 +6,12 @@ def deposito():
     msg_extrato = f"""
     ----------
     Depósito realizado
-    Valor = R$:{depositado}
-    Saldo atual = R$: {saldo}
+    Valor = R$:{depositado:.2f}
+    Saldo atual = R$: {saldo:.2f}
     """
     global extratar
     extratar = extratar + msg_extrato
-    print(saldo)
+    
 
 def saque():
     global saldo, numero_saque, LIMITE_SAQUE
@@ -24,8 +24,8 @@ def saque():
                 msg_extrato = f"""
     ----------
     Saque realizado
-    Valor = R$:{saque}
-    Saldo atual = R$: {saldo}
+    Valor = R$:{float(saque):.2f}
+    Saldo atual = R$: {saldo:.2f}
                 """
                 global extratar
                 extratar = extratar + msg_extrato
