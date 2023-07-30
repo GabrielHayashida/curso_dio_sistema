@@ -17,20 +17,22 @@ def saque():
     global saldo, numero_saque, LIMITE_SAQUE
     if(numero_saque < LIMITE_SAQUE):
         saque = int(input("Qual o valor do saque? "))
-        if(saldo > saque):
-            saldo = saldo - saque
-            numero_saque += 1
-            msg_extrato = f"""
-     ----------
+        if(saque<500):
+            if(saldo > saque):
+                saldo = saldo - saque
+                numero_saque += 1
+                msg_extrato = f"""
+    ----------
     Saque realizado
     Valor = R$:{saque}
     Saldo atual = R$: {saldo}
-            """
-            global extratar
-            extratar = extratar + msg_extrato
+                """
+                global extratar
+                extratar = extratar + msg_extrato
+            else:
+                print("Saldo insuficiente para o saque")
         else:
-            print("Saldo insuficiente para o saque")
-
+            print("Saques acima de R$500 não são permitidos para essa conta")
     else:
         print("Impossível fazer essa operação - Limite de transações excedidas")
 
